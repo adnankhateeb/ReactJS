@@ -1,0 +1,25 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Learn React"
+    },
+    {
+      "id": 2,
+      "title": "Learn Vue"
+    },
+    {
+      "id": 3,
+      "title": "Learn TypeScript"
+    },
+    {
+      "id": 4,
+      "title": "Learn PartyJS"
+    },
+    {
+      "title": "Go run ",
+      "status": false,
+      "id": 5
+    }
+  ]
+}
