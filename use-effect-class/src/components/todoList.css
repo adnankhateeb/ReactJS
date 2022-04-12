@@ -1,0 +1,44 @@
+.todoList {
+   display: flex;
+   flex-direction: column-reverse;
+   border: 1px solid black;
+   width: 25%;
+   margin: auto;
+   padding: 10px;
+   height: 300px;
+   background-color: rgb(236, 236, 236);
+   margin-top: 5%;
+   /* justify-content: flex-end; */
+}
+
+.item {
+   background-color: white;
+   /* margin: auto; */
+   margin-bottom: 2%;
+   display: flex;
+   border-radius: 10px;
+   height: min-content;
+   font-size: 1.3em;
+   justify-content: flex-start;
+   padding: 1%;
+   padding-left: 4%;
+   align-items: center;
+   /* width: 99%; */
+}
+.items::-webkit-scrollbar {
+    width: 3px;
+}
+
+.items::-webkit-scrollbar-track {
+    background-color: darkgrey;
+}
+
+.items::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.items {
+   overflow-y: scroll;
+   scrollbar-gutter:  stable both-edges;
+   /* margin-right: 1%; */
+}
+
