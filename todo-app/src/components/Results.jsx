@@ -1,13 +1,12 @@
 import React from "react";
-
+import './Results.css'
 export default function Results({ list }) {
-   console.log(list);
    return (
       <>
          {list.map((item) => {
             {
                if (item.status === true) {
-                  return <h3>{item.title}</h3>;
+                  return <div className='item2'><p>{item.title}</p></div>;
                }
             }
          })}

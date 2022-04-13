@@ -1,0 +1,15 @@
+.item2 {
+   display: flex;
+   border: 1px solid rgba(211, 211, 211, 0.5);
+   padding: 0 15px;
+   margin: auto;
+   background-color: rgba(255, 255, 255, 0.5);
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 15px;
+   height: 45px;
+   margin-top: 1px;
+   color: rgba(0, 0, 0, 0.5);
+   text-decoration: line-through;
+   /* margin-top: 2%; */
+}
