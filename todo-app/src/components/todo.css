@@ -1,0 +1,28 @@
+.entire {
+   display: flex;
+   flex-direction: column;
+   width: 20%;
+   margin: auto;
+   margin-top: 5%;
+}
+
+.topPart {
+   display: flex;
+   justify-content: space-evenly;
+}
+.topPart button {
+   margin: auto;
+   flex: 1;
+}
+.topPart input {
+   flex: 3;
+}
+.flex {
+   display: flex;
+   border: 1px solid red;
+   margin: auto;
+}
+
+.lineThrough {
+   text-decoration: line-through;
+}

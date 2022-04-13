@@ -1,23 +1,24 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import Todo from './components/Todo';
-
-
-
+import Todo from "./components/Todo";
 
 function App() {
-  
-
-  return (
-     <div className="App">
-       <Todo />
-     </div>
-  );
+   const [show, setShow] = useState(true);
+   return (
+      <div className="App">
+         {show ? <Todo /> : null}
+         <button
+            onClick={() => {
+               setShow(!show);
+            }}
+         >
+            {show ? "Hide" : "Show"} Todos
+         </button>
+      </div>
+   );
 }
 
 export default App;
-
-
 
 // function App() {
 //    const [age, setAge] = useState(12);
