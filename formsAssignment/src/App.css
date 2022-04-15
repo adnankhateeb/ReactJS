@@ -1,0 +1,21 @@
+.App {
+   /* text-align: center; */
+   display: flex;
+   width: 100%;
+   padding: 5%;
+   /* border: 2px solid red; */
+}
+
+.form {
+   /* width: 40% !important; */
+   flex: 1;
+   /* z-index: 3; */
+   /* border: 2000px solid red; */
+}
+
+.table {
+   /* width: 60%; */
+   flex: 3;
+   margin-left: 5%;
+   /* border: 2px solid red; */
+}
