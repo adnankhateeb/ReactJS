@@ -1,0 +1,38 @@
+.buttonComponent {
+   display: flex;
+   /* height: 30px; */
+   width: 93.5%;
+   margin: auto;
+   margin-bottom: 1%;
+   border: 2px solid rgb(150, 178, 156);
+   justify-content: flex-start;
+   align-items: center;
+   /* margin: 0 20px; */
+   padding-left: 20px;
+}
+.buttonComponent button {
+   height: 50%;
+   margin-left: 1%;
+   border: none;
+   padding: 10px;
+   cursor: pointer;
+}
+
+.filterButtons {
+   align-items: center;
+   display: flex;
+   /* border: 2px solid red; */
+   flex: 1;
+}
+
+.paymentOptions {
+   flex: 1;
+   display: flex;
+   align-items: center;
+}
+
+.sortButtons {
+   display: flex;
+   flex: 1;
+   align-items: center;
+}
