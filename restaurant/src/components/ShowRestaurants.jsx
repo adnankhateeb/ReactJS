@@ -1,4 +1,5 @@
 import React from "react";
+import { nanoid } from "nanoid";
 
 export default function ShowRestaurants({ data }) {
    //   console.log("data:", data)
@@ -6,7 +7,7 @@ export default function ShowRestaurants({ data }) {
       <div className="restaurantMain">
          {data.map((e) => {
             return (
-               <div className="restaurantCard">
+               <div className="restaurantCard" key={nanoid(4)}>
                   <div className="up">
                      <img src={e.image} className="cardImage" alt="" />
                      <div className="detailsDishes">

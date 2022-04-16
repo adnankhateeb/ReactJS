@@ -64,12 +64,11 @@ export default function RestaurantDetails() {
    return (
       <div>
          <ButtonComponents
-            key={"buttons"}
             handleFilter={handleFilter}
             handleSort={handleSort}
             handlePayments={handlePayments}
          />
-         <ShowRestaurants key={"data"} data={data} />
+         <ShowRestaurants data={data} />
       </div>
    );
 }
