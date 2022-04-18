@@ -17,8 +17,9 @@ export default function RestaurantDetails() {
    };
 
    useEffect(() => {
+      console.log('use effect')
       setDataToShow();
-   }, [setData]);
+   }, []);
 
    const handleFilter = async (num) => {
       let fetchedData = await fetchData();
