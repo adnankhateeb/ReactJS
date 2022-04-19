@@ -3,17 +3,20 @@ import "./App.css";
 import Button from "./components/Button";
 
 function App() {
-
    return (
       <div className="App">
-       
-         <Button theme={theme}>Allo</Button>
-         <Button
-            onClick={() => {
-               setTheme(theme === "light" ? "dark" : "light");
-            }}
-         >
-            Change Theme
+         <Button bg="#2490FE">Primary Button</Button>
+         <Button bg="transparent" border="solid">
+            Default Button
+         </Button>
+         <Button bg="transparent" border="dashed">
+            Dashed Button
+         </Button>
+         <Button bg="transparent" border="none">
+            Text Button
+         </Button>
+         <Button bg="transparent" border="none" color="#2490FE">
+            Link Button
          </Button>
       </div>
    );
