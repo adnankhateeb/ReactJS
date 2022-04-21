@@ -20,12 +20,13 @@ export const Navbar = () => {
          })
          .then((response) => {
             //  console.log(response);
-            handleAuth(true,response);
+            handleAuth(true, response);
          })
          .catch(() => {
-            handleAuth(false,response);
+            handleAuth(false, response);
          });
    };
+
    const handleChange = (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
    };
@@ -50,7 +51,14 @@ export const Navbar = () => {
                </>
             )}
             {isAuth ? (
-               <input type="submit" value="Logout" />
+               <input
+                  type="submit"
+                  value="Logout"
+                  onClick={(e) => {
+                      e.preventDefault();
+                     handleAuth(false);
+                  }}
+               />
             ) : (
                <input type="submit" value="Login" onClick={handleSubmit} />
             )}

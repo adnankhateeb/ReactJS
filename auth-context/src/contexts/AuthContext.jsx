@@ -7,7 +7,6 @@ export const AuthContextProvider = ({ children }) => {
    const [res, setRes] = useState();
 
    const handleAuth = (e, response) => {
-      console.log("response:", response);
       if (e) {
          setRes(response.data.token);
          setAuth(true);
@@ -18,7 +17,7 @@ export const AuthContextProvider = ({ children }) => {
    };
 
    return (
-      <AuthContext.Provider value={{res, isAuth, handleAuth }}>
+      <AuthContext.Provider value={{res, isAuth, handleAuth,setAuth }}>
          {children}
       </AuthContext.Provider>
    );
