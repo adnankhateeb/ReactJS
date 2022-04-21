@@ -55,7 +55,7 @@ export const Navbar = () => {
                   type="submit"
                   value="Logout"
                   onClick={(e) => {
-                      e.preventDefault();
+                     e.preventDefault();
                      handleAuth(false);
                   }}
                />
