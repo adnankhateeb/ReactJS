@@ -10,6 +10,7 @@
    height: 100vh;
    display: flex;
    flex-direction: column;
+   justify-content: flex-start;
 }
 .App button {
    margin-left: 5px;
@@ -27,6 +28,11 @@
 .components {
    /* padding-top: 5%; */
    font-size: 7rem;
-   align-items: center;
-   justify-content: center;
+   /* align-items: center; */
+   /* justify-content: center; */
+}
+
+.App * {
+  /* margin-bottom: 0; */
+  
 }

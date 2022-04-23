@@ -19,7 +19,7 @@ export default function Stopwatch() {
       }, 10);
    };
    return (
-      <div>
+      <div className="buttons">
          <div>
             {sec}s {ms < 10 ? "0" : null}
             {ms}

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Buttons from "./Buttons";
 import "./timer.css";
 
@@ -28,14 +28,6 @@ export const Timer = () => {
       }, 1000);
    };
 
-   useEffect(() => {
-      startTimer();
-
-      return () => {
-         clearInterval(timerRef.current);
-      };
-   }, []);
-
    return (
       <div>
          <span>
@@ -47,7 +39,37 @@ export const Timer = () => {
             {sec < 10 ? "0" : null}
             {sec}s
          </span>
-         <Buttons timerRef={timerRef}startTimer={startTimer} setSec={setSec} setMin={setMin} />
+         <br />
+         <div className="inputs">
+            Minutes:
+            <input
+               type="number"
+               placeholder="minutes"
+               onChange={(e) => {
+                  if (e.target.value < 0) {
+                     return;
+                  }
+                  setMin(e.target.value);
+               }}
+            />
+            Seconds
+            <input
+               type="number"
+               placeholder="seconds"
+               onChange={(e) => {
+                  if (e.target.value < 0) {
+                     return;
+                  }
+                  setSec(e.target.value);
+               }}
+            />
+         </div>
+         <Buttons
+            timerRef={timerRef}
+            startTimer={startTimer}
+            setSec={setSec}
+            setMin={setMin}
+         />
       </div>
    );
 };

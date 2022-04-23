@@ -1,24 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default function Buttons({ timerRef, setSec, setMin, startTimer }) {
+    const [stop, setStop] = useState(false);
+
    return (
       <div className="buttons">
          {" "}
-         <button
-            onClick={() => {
-               console.log("clicked");
-               clearInterval(timerRef.current);
-            }}
-         >
-            Stop
-         </button>
-         <button
-            onClick={() => {
-               startTimer();
-            }}
-         >
-            Start
-         </button>
+         {stop ? (
+            <button
+               onClick={() => {
+                  setStop(false);
+                  clearInterval(timerRef.current);
+               }}
+            >
+               Stop
+            </button>
+         ) : (
+            <button
+               onClick={() => {
+                  setStop(true);
+                  startTimer();
+               }}
+            >
+               Start
+            </button>
+         )}
          <button
             onClick={() => {
                setMin(5);
