@@ -1,58 +1,53 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Buttons from "./Buttons";
+import "./timer.css";
 
 export const Timer = () => {
-   const [sec, setSec] = useState(5);
-   const [ms, setMs] = useState(100);
-   const [min, setMin] = useState(5);
+   const [min, setMin] = useState(4);
+   const [sec, setSec] = useState(59);
+   const [ms, setMs] = useState(99);
 
-   useEffect(() => {
-      let secInterval = setInterval(() => {
-         setSec((e) => {
-            if (e === 0) {
-               minInterval;
-               clearInterval(secInterval);
-               clearInterval(msInterval);
-               return e;
+   const timerRef = useRef(null);
+
+   const startTimer = () => {
+      timerRef.current = setInterval(() => {
+         setSec((prev) => {
+            if (min === 0 && prev === 0) {
+               clearInterval(timerRef.current);
+               return 0;
             }
-            setMs(100);
-            msInterval;
-            return e - 1;
+            if (prev === 0) {
+               setSec(59);
+               setMin((previousValue) => {
+                  return previousValue - 1;
+               });
+            }
+
+            return prev - 1;
          });
       }, 1000);
+   };
 
-      let msInterval = setInterval(() => {
-         setMs((e) => {
-            if (e === 0) {
-               clearInterval(msInterval);
-               return e;
-            }
-            return e - 1;
-         });
-      }, 10);
-
-      let minInterval = setInterval(() => {
-         setMin((e) => {
-            if (e === 0) {
-               clearInterval(minInterval);
-               return e;
-            }
-            setSec(59);
-            secInterval;
-            return e - 1;
-         });
-      }, 1000 * 60);
+   useEffect(() => {
+      startTimer();
 
       return () => {
-         clearInterval(secInterval);
-         clearInterval(msInterval);
-         clearInterval(minInterval);
+         clearInterval(timerRef.current);
       };
-   }, [sec]);
+   }, []);
 
    return (
       <div>
-         {min}:{sec}:{ms < 10 ? "0" : null}
-         {ms}
+         <span>
+            {min < 10 ? "0" : null}
+            {min}m
+         </span>
+         :
+         <span style={{ marginLeft: "6px" }}>
+            {sec < 10 ? "0" : null}
+            {sec}s
+         </span>
+         <Buttons timerRef={timerRef}startTimer={startTimer} setSec={setSec} setMin={setMin} />
       </div>
    );
 };
