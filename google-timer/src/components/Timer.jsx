@@ -5,7 +5,6 @@ import "./timer.css";
 export const Timer = () => {
    const [min, setMin] = useState(4);
    const [sec, setSec] = useState(59);
-   const [ms, setMs] = useState(99);
 
    const timerRef = useRef(null);
 
