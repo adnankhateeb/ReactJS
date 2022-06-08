@@ -25,7 +25,12 @@ const TaskApp = () => {
       allTasks.push(todo);
       setRerender(!render);
    };
-   
+
+   const handleCount = (i, val) => {
+      allTasks[i].count += val;
+      setRerender(!render);
+   };
+
    useEffect(() => {
       setAllTasks(data);
    }, []);
@@ -40,6 +45,7 @@ const TaskApp = () => {
             handleStatus={handleStatus}
             handleRemove={handleRemove}
             handleAdd={handleAdd}
+            handleCount={handleCount}
          />
       </div>
    );
